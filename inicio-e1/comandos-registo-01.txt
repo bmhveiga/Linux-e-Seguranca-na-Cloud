@@ -1,0 +1,116 @@
+Comandos executados — Atividade 1
+
+1. whoami
+   Finalidade: identificar o utilizador atual no ambiente Linux.
+
+2. pwd
+   Finalidade: mostrar o diretório atual onde o utilizador se encontra.
+
+3. hostname
+   Finalidade: identificar o nome da máquina/servidor Ubuntu.
+
+4. hostname -I
+   Finalidade: mostrar o endereço IP da máquina virtual.
+
+5. ip a
+   Finalidade: consultar interfaces de rede, endereços IP e estado da configuração de rede.
+
+6. ping -c 4 8.8.8.8
+   Finalidade: testar conectividade externa usando um endereço IP público.
+
+7. ping -c 4 google.com
+   Finalidade: testar conectividade externa e resolução de nomes DNS.
+
+8. sudo apt update
+   Finalidade: atualizar a lista de pacotes disponíveis nos repositórios do Ubuntu.
+
+9. sudo apt upgrade -y
+   Finalidade: instalar atualizações disponíveis para os pacotes já existentes no sistema.
+
+10. sudo apt install git tree -y
+    Finalidade: instalar Git para versionamento e tree para visualizar a estrutura de diretórios.
+
+11. git --version
+    Finalidade: confirmar que o Git foi instalado corretamente.
+
+12. tree --version
+    Finalidade: confirmar que o comando tree foi instalado corretamente.
+
+13. git config --global user.name "Bruno Veiga"
+    Finalidade: configurar o nome do utilizador para os commits Git.
+
+14. git config --global user.email "[brunomhv@gmail.com](mailto:brunomhv@gmail.com)"
+    Finalidade: configurar o email associado aos commits Git.
+
+15. git config --global --list
+    Finalidade: verificar as configurações globais do Git.
+
+16. ssh-keygen -t ed25519 -C "[brunomhv@gmail.com](mailto:brunomhv@gmail.com)"
+    Finalidade: criar uma chave SSH para autenticação segura entre o Ubuntu Server e o GitHub.
+
+17. cat ~/.ssh/id_ed25519.pub
+    Finalidade: visualizar a chave pública SSH para adicioná-la ao GitHub.
+
+18. ssh -T [git@github.com](mailto:git@github.com)
+    Finalidade: testar a autenticação SSH entre o Ubuntu Server e o GitHub.
+
+19. git clone [git@github.com](mailto:git@github.com):bmhveiga/Linux-e-Seguranca-na-Cloud.git
+    Finalidade: clonar o repositório GitHub para dentro do Ubuntu Server.
+
+20. cd Linux-e-Seguranca-na-Cloud
+    Finalidade: entrar na pasta local do repositório clonado.
+
+21. ls
+    Finalidade: listar o conteúdo do diretório atual.
+
+22. ls -l
+    Finalidade: listar o conteúdo do diretório atual com mais detalhes.
+
+23. mkdir -p inicio-e1/evidencias
+    Finalidade: criar a pasta para guardar evidências da primeira atividade.
+
+24. mkdir -p produto-final
+    Finalidade: criar a pasta para organização futura do produto final do módulo.
+
+25. touch inicio-e1/comandos-registo-01.txt
+    Finalidade: criar o ficheiro de registo dos comandos executados.
+
+26. touch inicio-e1/README.md
+    Finalidade: criar o README técnico da primeira atividade.
+
+27. touch inicio-e1/evidencias/.gitkeep
+    Finalidade: permitir que a pasta de evidências seja versionada mesmo estando vazia.
+
+28. touch produto-final/.gitkeep
+    Finalidade: permitir que a pasta produto-final seja versionada mesmo estando vazia.
+
+29. tree
+    Finalidade: visualizar a estrutura de diretórios criada no projeto.
+
+30. nano inicio-e1/comandos-registo-01.txt
+    Finalidade: editar o ficheiro de registo dos comandos.
+
+31. nano inicio-e1/README.md
+    Finalidade: editar o README técnico da atividade.
+
+32. cat inicio-e1/comandos-registo-01.txt
+    Finalidade: visualizar o conteúdo do ficheiro de comandos no terminal.
+
+33. cat inicio-e1/README.md
+    Finalidade: visualizar o conteúdo do README no terminal.
+
+34. git status
+    Finalidade: verificar ficheiros modificados, novos ficheiros e estado do repositório local.
+
+35. git add .
+    Finalidade: adicionar todas as alterações ao staging area do Git.
+
+36. git commit -m "Adicionar estrutura inicial da Atividade 1"
+    Finalidade: criar um commit com a estrutura inicial da atividade.
+
+37. git push origin main
+    Finalidade: enviar as alterações do Ubuntu Server para o repositório remoto no GitHub.
+
+Observação técnica:
+Durante a preparação do ambiente, foi identificado um problema de conectividade. A VM estava acessível por SSH a partir do Windows, mas inicialmente não conseguia aceder à internet. Após testes com ping e verificação da configuração NAT no VMware, foi identificado que o serviço VMware NAT Service estava parado no Windows. Depois de iniciar o serviço, a conectividade foi restaurada.
+
