@@ -1,0 +1,24 @@
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/usr/lib/systemd/system/ssh.service; disabled; preset: enabled)
+     Active: active (running) since Mon 2026-06-01 22:59:08 UTC; 18h ago
+TriggeredBy: ● ssh.socket
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+    Process: 1464 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+   Main PID: 1465 (sshd)
+      Tasks: 1 (limit: 4543)
+     Memory: 4.0M (peak: 5.1M)
+        CPU: 371ms
+     CGroup: /system.slice/ssh.service
+             └─1465 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+
+Jun 01 22:59:08 ubuntuserver sshd[1465]: Server listening on :: port 22.
+Jun 01 22:59:08 ubuntuserver systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Jun 01 22:59:15 ubuntuserver sshd[1467]: Accepted password for bruno from 192.168.89.1 port 63365 ssh2
+Jun 01 22:59:15 ubuntuserver sshd[1467]: pam_unix(sshd:session): session opened for user bruno(uid=1000) by bruno(uid=0)
+Jun 01 23:50:08 ubuntuserver sshd[1763]: Accepted password for bruno from 192.168.89.1 port 62652 ssh2
+Jun 01 23:50:09 ubuntuserver sshd[1763]: pam_unix(sshd:session): session opened for user bruno(uid=1000) by bruno(uid=0)
+Jun 02 14:30:29 ubuntuserver sshd[2781]: Accepted password for bruno from 192.168.89.1 port 64949 ssh2
+Jun 02 14:30:29 ubuntuserver sshd[2781]: pam_unix(sshd:session): session opened for user bruno(uid=1000) by bruno(uid=0)
+Jun 02 16:11:58 ubuntuserver sshd[3036]: Accepted password for bruno from 192.168.89.1 port 57647 ssh2
+Jun 02 16:11:58 ubuntuserver sshd[3036]: pam_unix(sshd:session): session opened for user bruno(uid=1000) by bruno(uid=0)

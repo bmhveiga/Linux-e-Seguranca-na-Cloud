@@ -1,0 +1,63 @@
+
+## Tarefa A2 - Identificação do utilizador e grupos
+
+whoami
+Finalidade: mostra o utilizador atualmente autenticado no sistema.
+
+id
+Finalidade: mostra o UID, GID, grupo primário e grupos suplementares do utilizador.
+
+groups
+Finalidade: mostra os grupos aos quais o utilizador pertence.
+
+
+## Tarefa A3 - Criação de ficheiros de teste
+
+mkdir -p teste-permissoes
+Finalidade: cria uma pasta para testar permissões.
+
+echo "Este ficheiro pode ser lido por todos." > publico.txt
+Finalidade: cria o ficheiro publico.txt com conteúdo de teste.
+
+echo "Este ficheiro é mais restrito." > restrito.txt
+Finalidade: cria o ficheiro restrito.txt com conteúdo de teste.
+
+cat > script.sh
+Finalidade: cria um pequeno script Bash para testar permissão de execução.
+
+ls -l
+Finalidade: mostra as permissões, dono e grupo dos ficheiros criados.
+
+
+## Tarefa A4 - Aplicação de permissões
+
+chmod 644 publico.txt
+Finalidade: permite leitura para todos, mas escrita apenas para o dono.
+
+chmod 640 restrito.txt
+Finalidade: permite leitura e escrita ao dono, leitura ao grupo e nenhum acesso a outros.
+
+chmod u+x script.sh
+Finalidade: adiciona permissão de execução ao dono do script.
+
+ls -l
+Finalidade: confirma as permissões aplicadas.
+
+./script.sh
+Finalidade: testa a execução do script após aplicar permissão de execução.
+
+
+## Parte B2 - Acesso remoto por SSH
+
+systemctl status ssh --no-pager
+Finalidade: verifica o estado do serviço SSH no sistema.
+
+hostname -I
+Finalidade: mostra o endereço IP do servidor Linux.
+
+echo "ssh bruno@$(hostname -I | awk '{print $1}')"
+Finalidade: gera um exemplo de comando de ligação SSH usando o IP atual da VM.
+
+last -n 5
+Finalidade: mostra os últimos acessos ou sessões registadas no sistema.
+

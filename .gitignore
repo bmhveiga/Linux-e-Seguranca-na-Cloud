@@ -1,0 +1,16 @@
+*.zip
+*.tar.gz
+*.7z
+*.rar
+
+*.pem
+*.key
+id_rsa
+id_ed25519
+*.ppk
+.env
+.env.*
+
+.DS_Store
+Thumbs.db
+*.swp

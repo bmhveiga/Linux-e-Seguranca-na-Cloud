@@ -1,0 +1,7 @@
+bruno    pts/0        192.168.89.1     Tue Jun  2 16:11   still logged in
+bruno    pts/0        192.168.89.1     Tue Jun  2 14:30 - 15:13  (00:43)
+bruno    pts/0        192.168.89.1     Mon Jun  1 23:50 - 01:47  (01:56)
+bruno    pts/0        192.168.89.1     Mon Jun  1 22:59 - 23:26  (00:27)
+reboot   system boot  6.8.0-117-generi Mon Jun  1 22:57   still running
+
+wtmp begins Wed May 27 16:39:10 2026

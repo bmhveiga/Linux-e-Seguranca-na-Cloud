@@ -1,0 +1,8 @@
+### whoami
+bruno
+
+### id
+uid=1000(bruno) gid=1000(bruno) groups=1000(bruno),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),101(lxd)
+
+### groups
+bruno adm cdrom sudo dip plugdev lxd
