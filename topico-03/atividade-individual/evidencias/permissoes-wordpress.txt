@@ -1,0 +1,26 @@
+### Permissões da pasta WordPress
+
+### Pasta principal
+drwxr-xr-x 5 www-data www-data 4096 Jun  8 00:21 /var/www/html/topico-03-wordpress
+
+### Ficheiros principais
+total 236
+-rw-r--r--  1 www-data www-data   405 Feb  6  2020 index.php
+-rw-r--r--  1 www-data www-data 19903 Jan  1 00:07 license.txt
+-rw-r--r--  1 www-data www-data  7406 Jan  9 11:47 readme.html
+-rw-r--r--  1 www-data www-data  7371 Feb 17 17:05 wp-activate.php
+drwxr-xr-x  9 www-data www-data  4096 May 19 17:16 wp-admin
+-rw-r--r--  1 www-data www-data   351 Feb  6  2020 wp-blog-header.php
+-rw-r--r--  1 www-data www-data  2323 Jun 14  2023 wp-comments-post.php
+-rw-r--r--  1 www-data www-data  3339 Aug 12  2025 wp-config-sample.php
+drwxr-xr-x  4 www-data www-data  4096 May 19 05:12 wp-content
+-rw-r--r--  1 www-data www-data  5617 Aug  2  2024 wp-cron.php
+drwxr-xr-x 35 www-data www-data 16384 May 20 17:39 wp-includes
+-rw-r--r--  1 www-data www-data  2493 Apr 30  2025 wp-links-opml.php
+-rw-r--r--  1 www-data www-data  3937 Mar 11  2024 wp-load.php
+-rw-r--r--  1 www-data www-data 51850 Feb 28 22:57 wp-login.php
+-rw-r--r--  1 www-data www-data  8727 Apr  2  2025 wp-mail.php
+-rw-r--r--  1 www-data www-data 32650 May  8 15:59 wp-settings.php
+-rw-r--r--  1 www-data www-data 34621 Feb 17 17:05 wp-signup.php
+-rw-r--r--  1 www-data www-data  5214 Aug 19  2025 wp-trackback.php
+-rw-r--r--  1 www-data www-data  3205 Nov  8  2024 xmlrpc.php

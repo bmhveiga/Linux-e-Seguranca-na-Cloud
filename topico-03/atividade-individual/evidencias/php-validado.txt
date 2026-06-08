@@ -1,0 +1,10 @@
+### PHP instalado e validado
+
+### Versão do PHP
+PHP 8.3.6 (cli) (built: May 25 2026 13:12:06) (NTS)
+Copyright (c) The PHP Group
+Zend Engine v4.3.6, Copyright (c) Zend Technologies
+    with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies
+
+### Módulo PHP carregado no Apache
+ php_module (shared)

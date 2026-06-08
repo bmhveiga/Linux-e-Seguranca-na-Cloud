@@ -1,0 +1,16 @@
+### Base de dados e utilizador WordPress criados
+
+### Bases de dados existentes
+Database
+information_schema
+mysql
+performance_schema
+sys
+wordpress_topico3
+
+### Utilizadores MariaDB
+User	Host
+mariadb.sys	localhost
+mysql	localhost
+root	localhost
+wp_topico3	localhost

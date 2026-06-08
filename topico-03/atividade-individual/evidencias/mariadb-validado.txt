@@ -1,0 +1,18 @@
+### MariaDB instalado e validado
+
+### Estado do MariaDB
+● mariadb.service - MariaDB 10.11.14 database server
+     Loaded: loaded (/usr/lib/systemd/system/mariadb.service; enabled; preset: enabled)
+     Active: active (running) since Mon 2026-06-08 00:04:48 UTC; 9min ago
+       Docs: man:mariadbd(8)
+             https://mariadb.com/kb/en/library/systemd/
+   Main PID: 54951 (mariadbd)
+     Status: "Taking your SQL requests now..."
+      Tasks: 9 (limit: 7330)
+     Memory: 88.4M (peak: 91.7M)
+        CPU: 778ms
+     CGroup: /system.slice/mariadb.service
+             └─54951 /usr/sbin/mariadbd
+
+### Versão do MariaDB/MySQL
+mysql  Ver 15.1 Distrib 10.11.14-MariaDB, for debian-linux-gnu (x86_64) using  EditLine wrapper

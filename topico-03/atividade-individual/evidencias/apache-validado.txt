@@ -1,0 +1,30 @@
+### Apache instalado e validado
+
+### Estado do Apache
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Sun 2026-06-07 18:38:50 UTC; 6min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 41054 (apache2)
+      Tasks: 55 (limit: 1110)
+     Memory: 5.6M (peak: 5.7M)
+        CPU: 71ms
+     CGroup: /system.slice/apache2.service
+             ├─41054 /usr/sbin/apache2 -k start
+             ├─41056 /usr/sbin/apache2 -k start
+             └─41058 /usr/sbin/apache2 -k start
+
+### Serviço na porta 80
+tcp   LISTEN 0      511                *:80              *:*    users:(("apache2",pid=41058,fd=4),("apache2",pid=41056,fd=4),("apache2",pid=41054,fd=4))
+
+### Teste HTTP local
+HTTP/1.1 200 OK
+Date: Sun, 07 Jun 2026 18:45:39 GMT
+Server: Apache/2.4.58 (Ubuntu)
+Last-Modified: Thu, 04 Jun 2026 20:16:20 GMT
+ETag: "15b-6537337b023e9"
+Accept-Ranges: bytes
+Content-Length: 347
+Vary: Accept-Encoding
+Content-Type: text/html
+

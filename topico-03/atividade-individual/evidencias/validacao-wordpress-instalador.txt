@@ -1,0 +1,40 @@
+### Validação inicial do WordPress
+
+### Teste HTTP da pasta WordPress
+HTTP/1.1 200 OK
+Date: Mon, 08 Jun 2026 00:39:54 GMT
+Server: Apache/2.4.58 (Ubuntu)
+Link: <http://<VPS_PUBLIC_IP>/topico-03-wordpress/index.php/wp-json/>; rel="https://api.w.org/"
+Content-Type: text/html; charset=UTF-8
+
+
+### Teste HTTP do instalador WordPress
+HTTP/1.1 409 Conflict
+Date: Mon, 08 Jun 2026 00:39:55 GMT
+Server: Apache/2.4.58 (Ubuntu)
+Expires: Wed, 11 Jan 1984 05:00:00 GMT
+Cache-Control: no-cache, must-revalidate, max-age=0, no-store, private
+Content-Type: text/html; charset=UTF-8
+
+
+### Teste seguindo redirect
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name='robots' content='max-image-preview:large' />
+<title>Module 03 &#8211; Linux Admnistration</title>
+<link rel="alternate" type="application/rss+xml" title="Module 03 - Linux Admnistration &raquo; Feed" href="http://<VPS_PUBLIC_IP>/topico-03-wordpress/index.php/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Module 03 - Linux Admnistration &raquo; Comments Feed" href="http://<VPS_PUBLIC_IP>/topico-03-wordpress/index.php/comments/feed/" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-block-site-title-inline-css">
+.wp-block-site-title{box-sizing:border-box}.wp-block-site-title :where(a){color:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-decoration:inherit}
+/*# sourceURL=http://<VPS_PUBLIC_IP>/topico-03-wordpress/wp-includes/blocks/site-title/style.min.css */
+</style>
+<style id="wp-block-page-list-inline-css">
+.wp-block-navigation .wp-block-page-list{align-items:var(--navigation-layout-align,initial);background-color:inherit;display:flex;flex-direction:var(--navigation-layout-direction,initial);flex-wrap:var(--navigation-layout-wrap,wrap);justify-content:var(--navigation-layout-justify,initial)}.wp-block-navigation .wp-block-navigation-item{background-color:inherit}.wp-block-page-list{box-sizing:border-box}
+/*# sourceURL=http://<VPS_PUBLIC_IP>/topico-03-wordpress/wp-includes/blocks/page-list/style.min.css */

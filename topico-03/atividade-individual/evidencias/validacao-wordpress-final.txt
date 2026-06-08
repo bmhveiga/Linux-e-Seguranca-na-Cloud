@@ -1,0 +1,83 @@
+### Validação final do WordPress
+
+### Teste HTTP da página WordPress
+HTTP/1.1 200 OK
+Date: Mon, 08 Jun 2026 00:46:39 GMT
+Server: Apache/2.4.58 (Ubuntu)
+Link: <http://<VPS_PUBLIC_IP>/topico-03-wordpress/index.php/wp-json/>; rel="https://api.w.org/"
+Content-Type: text/html; charset=UTF-8
+
+
+### Teste HTTP do painel administrativo
+HTTP/1.1 302 Found
+Date: Mon, 08 Jun 2026 00:46:39 GMT
+Server: Apache/2.4.58 (Ubuntu)
+Expires: Wed, 11 Jan 1984 05:00:00 GMT
+Cache-Control: no-cache, must-revalidate, max-age=0, no-store, private
+X-Redirect-By: WordPress
+Location: http://<VPS_PUBLIC_IP>/topico-03-wordpress/wp-login.php?redirect_to=http%3A%2F%2Flocalhost%2Ftopico-03-wordpress%2Fwp-admin%2F&reauth=1
+Content-Type: text/html; charset=UTF-8
+
+
+### Serviços principais
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Mon 2026-06-08 00:29:01 UTC; 17min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+    Process: 60093 ExecStart=/usr/sbin/apachectl start (code=exited, status=0/SUCCESS)
+   Main PID: 60096 (apache2)
+      Tasks: 11 (limit: 1110)
+     Memory: 97.0M (peak: 110.6M)
+        CPU: 4.049s
+     CGroup: /system.slice/apache2.service
+             ├─60096 /usr/sbin/apache2 -k start
+             ├─60098 /usr/sbin/apache2 -k start
+             ├─60099 /usr/sbin/apache2 -k start
+             ├─60100 /usr/sbin/apache2 -k start
+             ├─60101 /usr/sbin/apache2 -k start
+             ├─60102 /usr/sbin/apache2 -k start
+             ├─60149 /usr/sbin/apache2 -k start
+             ├─60167 /usr/sbin/apache2 -k start
+             ├─60169 /usr/sbin/apache2 -k start
+             ├─60196 /usr/sbin/apache2 -k start
+             └─60278 /usr/sbin/apache2 -k start
+● mariadb.service - MariaDB 10.11.14 database server
+     Loaded: loaded (/usr/lib/systemd/system/mariadb.service; enabled; preset: enabled)
+     Active: active (running) since Mon 2026-06-08 00:04:48 UTC; 41min ago
+       Docs: man:mariadbd(8)
+             https://mariadb.com/kb/en/library/systemd/
+   Main PID: 54951 (mariadbd)
+     Status: "Taking your SQL requests now..."
+      Tasks: 11 (limit: 7330)
+     Memory: 101.4M (peak: 101.8M)
+        CPU: 1.416s
+     CGroup: /system.slice/mariadb.service
+             └─54951 /usr/sbin/mariadbd
+
+### Porta 80
+tcp   LISTEN 0      511                *:80              *:*    users:(("apache2",pid=60278,fd=4),("apache2",pid=60196,fd=4),("apache2",pid=60169,fd=4),("apache2",pid=60167,fd=4),("apache2",pid=60149,fd=4),("apache2",pid=60102,fd=4),("apache2",pid=60101,fd=4),("apache2",pid=60100,fd=4),("apache2",pid=60099,fd=4),("apache2",pid=60098,fd=4),("apache2",pid=60096,fd=4))
+
+### Ficheiros WordPress publicados
+/var/www/html/topico-03-wordpress
+├── index.php
+├── license.txt
+├── readme.html
+├── wp-activate.php
+├── wp-admin
+├── wp-blog-header.php
+├── wp-comments-post.php
+├── wp-config-sample.php
+├── wp-config.php
+├── wp-content
+├── wp-cron.php
+├── wp-includes
+├── wp-links-opml.php
+├── wp-load.php
+├── wp-login.php
+├── wp-mail.php
+├── wp-settings.php
+├── wp-signup.php
+├── wp-trackback.php
+└── xmlrpc.php
+
+4 directories, 17 files

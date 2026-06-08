@@ -1,0 +1,47 @@
+### Ficheiros WordPress publicados
+
+### Lista inicial de ficheiros
+total 236
+-rw-r--r--  1 root root   405 Feb  6  2020 index.php
+-rw-r--r--  1 root root 19903 Jan  1 00:07 license.txt
+-rw-r--r--  1 root root  7406 Jan  9 11:47 readme.html
+-rw-r--r--  1 root root  7371 Feb 17 17:05 wp-activate.php
+drwxr-xr-x  9 root root  4096 May 19 17:16 wp-admin
+-rw-r--r--  1 root root   351 Feb  6  2020 wp-blog-header.php
+-rw-r--r--  1 root root  2323 Jun 14  2023 wp-comments-post.php
+-rw-r--r--  1 root root  3339 Aug 12  2025 wp-config-sample.php
+drwxr-xr-x  4 root root  4096 May 19 05:12 wp-content
+-rw-r--r--  1 root root  5617 Aug  2  2024 wp-cron.php
+drwxr-xr-x 35 root root 16384 May 20 17:39 wp-includes
+-rw-r--r--  1 root root  2493 Apr 30  2025 wp-links-opml.php
+-rw-r--r--  1 root root  3937 Mar 11  2024 wp-load.php
+-rw-r--r--  1 root root 51850 Feb 28 22:57 wp-login.php
+-rw-r--r--  1 root root  8727 Apr  2  2025 wp-mail.php
+-rw-r--r--  1 root root 32650 May  8 15:59 wp-settings.php
+-rw-r--r--  1 root root 34621 Feb 17 17:05 wp-signup.php
+-rw-r--r--  1 root root  5214 Aug 19  2025 wp-trackback.php
+-rw-r--r--  1 root root  3205 Nov  8  2024 xmlrpc.php
+
+### Estrutura WordPress
+/var/www/html/topico-03-wordpress
+├── index.php
+├── license.txt
+├── readme.html
+├── wp-activate.php
+├── wp-admin
+├── wp-blog-header.php
+├── wp-comments-post.php
+├── wp-config-sample.php
+├── wp-content
+├── wp-cron.php
+├── wp-includes
+├── wp-links-opml.php
+├── wp-load.php
+├── wp-login.php
+├── wp-mail.php
+├── wp-settings.php
+├── wp-signup.php
+├── wp-trackback.php
+└── xmlrpc.php
+
+4 directories, 16 files

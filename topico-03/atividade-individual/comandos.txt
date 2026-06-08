@@ -1,0 +1,115 @@
+# Comandos utilizados - Atividade prática individual Tópico 3
+
+## Preparação da estrutura da atividade
+
+cd ~/Linux-e-Seguranca-na-Cloud
+
+mkdir -p topico-03/atividade-individual/{site,wordpress,evidencias}
+
+touch topico-03/README.md
+touch topico-03/atividade-individual/comandos.txt
+touch topico-03/atividade-individual/publicacao.md
+touch topico-03/atividade-individual/validacao.md
+touch topico-03/atividade-individual/README.md
+
+tree topico-03
+
+## Instalação e validação do Apache
+
+sudo systemctl stop nginx
+sudo systemctl disable nginx
+
+sudo apt update
+sudo apt install apache2 -y
+
+sudo systemctl enable apache2
+sudo systemctl start apache2
+
+systemctl status apache2 --no-pager
+sudo ss -tulpn | grep ':80'
+curl -I http://localhost
+
+## Instalação e validação do Apache
+
+sudo systemctl stop nginx
+sudo systemctl disable nginx
+
+sudo apt update
+sudo apt install apache2 -y
+
+sudo systemctl enable apache2
+sudo systemctl start apache2
+
+systemctl status apache2 --no-pager
+sudo ss -tulpn | grep ':80'
+curl -I http://localhost
+
+## Instalação e validação do PHP
+
+sudo apt install php libapache2-mod-php php-mysql php-curl php-gd php-xml php-mbstring php-zip php-intl -y
+
+php -v
+apache2ctl -M | grep php
+
+## Instalação e validação do MariaDB
+
+sudo apt install mariadb-server -y
+
+sudo systemctl enable mariadb
+sudo systemctl start mariadb
+
+systemctl status mariadb --no-pager
+sudo mysql --version
+
+## Criação da base de dados WordPress
+
+sudo mysql
+
+CREATE DATABASE wordpress_topico3 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'wp_topico3'@'localhost' IDENTIFIED BY '<LAB_DB_PASSWORD>';
+GRANT ALL PRIVILEGES ON wordpress_topico3.* TO 'wp_topico3'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+
+sudo mysql -e "SHOW DATABASES;"
+sudo mysql -e "SELECT User, Host FROM mysql.user;"
+
+## Download e publicação dos ficheiros WordPress
+
+cd /tmp
+wget https://wordpress.org/latest.tar.gz
+
+sudo tar -xzf latest.tar.gz --strip-components=1 -C /var/www/html/topico-03-wordpress
+
+sudo ls -l /var/www/html/topico-03-wordpress | head
+sudo tree -L 1 /var/www/html/topico-03-wordpress
+
+## Permissões dos ficheiros WordPress
+
+sudo chown -R www-data:www-data /var/www/html/topico-03-wordpress
+
+sudo find /var/www/html/topico-03-wordpress -type d -exec chmod 755 {} \;
+
+sudo find /var/www/html/topico-03-wordpress -type f -exec chmod 644 {} \;
+
+sudo ls -ld /var/www/html/topico-03-wordpress
+sudo ls -l /var/www/html/topico-03-wordpress | head
+
+## Validação inicial do WordPress
+
+sudo systemctl restart apache2
+
+curl -I http://localhost/topico-03-wordpress/
+curl -I http://localhost/topico-03-wordpress/wp-admin/setup-config.php
+curl -L http://localhost/topico-03-wordpress/ | head -n 20
+
+## Validação final do WordPress
+
+curl -I http://localhost/topico-03-wordpress/
+curl -I http://localhost/topico-03-wordpress/wp-admin/
+
+systemctl status apache2 --no-pager
+systemctl status mariadb --no-pager
+
+sudo ss -tulpn | grep ':80'
+sudo tree -L 1 /var/www/html/topico-03-wordpress
