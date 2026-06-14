@@ -1,0 +1,35 @@
+### Tópico 05 - Manutenção e continuidade
+
+### Data
+Sun Jun 14 21:21:45 UTC 2026
+
+### Serviço crítico
+active
+enabled
+
+### Validação da configuração Nginx
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+### Ficheiros e diretórios críticos
+drwxr-xr-x 2 root www-data 4096 Jun  8 20:36 /var/www/html
+total 8
+-rw-r--r-- 1 root www-data 347 Jun  4 20:16 index.html
+-rw-r--r-- 1 root www-data 615 Jun  4 19:57 index.nginx-debian.html
+-rw-r--r-- 1 root root 564 Jun 10 17:39 /etc/nginx/sites-available/default
+
+### Logs importantes
+total 544K
+-rw-r----- 1 www-data adm 300K Jun 14 21:14 access.log
+-rw-r----- 1 www-data adm 135K Jun 13 23:55 access.log.1
+-rw-r----- 1 www-data adm  15K Jun 12 23:54 access.log.2.gz
+-rw-r----- 1 www-data adm  11K Jun 11 23:53 access.log.3.gz
+-rw-r----- 1 www-data adm  18K Jun 10 23:46 access.log.4.gz
+-rw-r----- 1 www-data adm 8.1K Jun  9 23:45 access.log.5.gz
+-rw-r----- 1 www-data adm 1.4K Jun  8 23:36 access.log.6.gz
+-rw-r----- 1 www-data adm  10K Jun  7 18:33 access.log.7.gz
+-rw-r----- 1 www-data adm 6.5K Jun  6 23:58 access.log.8.gz
+-rw-r----- 1 www-data adm 7.1K Jun  5 23:50 access.log.9.gz
+-rw-r----- 1 www-data adm    0 Jun 11 00:00 error.log
+-rw-r----- 1 www-data adm   80 Jun 10 06:47 error.log.1
+-rw-r----- 1 www-data adm   92 Jun  4 19:57 error.log.2.gz

@@ -1,0 +1,35 @@
+### Tópico 05 - Backup e recuperação
+
+### Data
+Sun Jun 14 21:14:27 UTC 2026
+
+### Ficheiro de backup criado
+-rw-r--r-- 1 bruno bruno 1.1K Jun 14 21:12 evidencias/backup-web-nginx-topico-05.tar.gz
+
+### Conteúdo do backup
+var/www/html/
+var/www/html/index.nginx-debian.html
+var/www/html/index.html
+etc/nginx/sites-available/default
+
+### Recuperação em pasta de teste
+/tmp/topico-05-restore-test/etc/nginx/sites-available/default
+/tmp/topico-05-restore-test/var/www/html/index.nginx-debian.html
+/tmp/topico-05-restore-test/var/www/html/index.html
+
+### Validação do ficheiro recuperado
+total 8
+-rw-r--r-- 1 bruno bruno 347 Jun  4 20:16 index.html
+-rw-r--r-- 1 bruno bruno 615 Jun  4 19:57 index.nginx-debian.html
+
+### Validação do serviço original após backup
+HTTP/1.1 200 OK
+Server: nginx/1.24.0 (Ubuntu)
+Date: Sun, 14 Jun 2026 21:14:28 GMT
+Content-Type: text/html
+Content-Length: 347
+Last-Modified: Thu, 04 Jun 2026 20:16:20 GMT
+Connection: keep-alive
+ETag: "6a21dd14-15b"
+Accept-Ranges: bytes
+

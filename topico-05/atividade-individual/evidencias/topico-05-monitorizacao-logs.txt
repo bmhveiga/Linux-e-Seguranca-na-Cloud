@@ -1,0 +1,58 @@
+### Tópico 05 - Monitorização e logs
+
+### Data
+Sun Jun 14 21:15:00 UTC 2026
+
+### Tempo de atividade
+ 21:15:00 up 10 days,  1:59,  2 users,  load average: 0.00, 0.00, 0.00
+up 1 week, 3 days, 1 hour, 59 minutes
+
+### Memória
+               total        used        free      shared  buff/cache   available
+Mem:           961Mi       415Mi        98Mi       4.1Mi       618Mi       546Mi
+Swap:             0B          0B          0B
+
+### Espaço em disco
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            97M  1.1M   96M   2% /run
+/dev/vda1        24G  2.9G   21G  13% /
+tmpfs           481M     0  481M   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/vda16      881M  114M  705M  14% /boot
+/dev/vda15      105M  6.2M   99M   6% /boot/efi
+tmpfs            97M   12K   97M   1% /run/user/1000
+
+### Estado do serviço web
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: enabled)
+     Active: active (running) since Wed 2026-06-10 06:47:54 UTC; 4 days ago
+       Docs: man:nginx(8)
+    Process: 110423 ExecReload=/usr/sbin/nginx -g daemon on; master_process on; -s reload (code=exited, status=0/SUCCESS)
+   Main PID: 103079 (nginx)
+      Tasks: 2 (limit: 1110)
+     Memory: 7.5M (peak: 8.0M)
+        CPU: 6.144s
+     CGroup: /system.slice/nginx.service
+             ├─103079 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             └─110425 "nginx: worker process"
+
+### Logs recentes do serviço Nginx
+Jun 04 19:57:46 ubuntu-m3-cloud-lab systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 04 19:57:46 ubuntu-m3-cloud-lab systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 07 18:38:02 ubuntu-m3-cloud-lab systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 07 18:38:02 ubuntu-m3-cloud-lab systemd[1]: nginx.service: Deactivated successfully.
+Jun 07 18:38:02 ubuntu-m3-cloud-lab systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+Jun 08 21:41:10 ubuntu-m3-cloud-lab systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 08 21:41:10 ubuntu-m3-cloud-lab systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 10 06:47:43 ubuntu-m3-cloud-lab systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 10 06:47:44 ubuntu-m3-cloud-lab systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 10 06:47:53 ubuntu-m3-cloud-lab systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 10 06:47:53 ubuntu-m3-cloud-lab systemd[1]: nginx.service: Deactivated successfully.
+Jun 10 06:47:53 ubuntu-m3-cloud-lab systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+Jun 10 06:47:53 ubuntu-m3-cloud-lab systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 10 06:47:54 ubuntu-m3-cloud-lab systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 10 17:39:35 ubuntu-m3-cloud-lab systemd[1]: Reloading nginx.service - A high performance web server and a reverse proxy server...
+Jun 10 17:39:35 ubuntu-m3-cloud-lab nginx[110423]: 2026/06/10 17:39:35 [notice] 110423#110423: signal process started
+Jun 10 17:39:35 ubuntu-m3-cloud-lab systemd[1]: Reloaded nginx.service - A high performance web server and a reverse proxy server.
+
+### Logs recentes de erro Nginx

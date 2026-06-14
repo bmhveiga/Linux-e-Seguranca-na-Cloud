@@ -1,0 +1,150 @@
+
+Comandos usados - Tópico 05
+Criar estrutura
+
+mkdir -p topico-05/atividade-individual/evidencias
+cd topico-05/atividade-individual
+touch comandos.txt monitorizacao.md logs.md manutencao.md backup-recuperacao.md continuidade.md README.md
+
+Monitorização básica
+
+uptime
+uptime -p
+free -h
+df -h
+
+Estado do serviço web
+
+systemctl status nginx --no-pager
+systemctl is-active nginx
+systemctl is-enabled nginx
+
+Portas em escuta
+
+sudo ss -tulpn | grep -E ':(80|443|2222)'
+
+Logs
+
+sudo journalctl -u nginx -n 20 --no-pager
+sudo tail -n 20 /var/log/nginx/error.log
+
+Verificar ficheiros críticos
+
+ls -ld /var/www/html
+ls -l /var/www/html
+ls -l /etc/nginx/sites-available/default
+ls -lh /var/log/nginx/
+
+Validar configuração Nginx
+
+sudo nginx -t
+
+Backup
+
+BACKUP="evidencias/backup-web-nginx-topico-05.tar.gz"
+sudo tar -czf "$BACKUP" /var/www/html /etc/nginx/sites-available/default
+sudo chown "$USER:$USER" "$BACKUP"
+
+Teste de recuperação
+
+rm -rf /tmp/topico-05-restore-test
+mkdir -p /tmp/topico-05-restore-test
+tar -xzf "$BACKUP" -C /tmp/topico-05-restore-test
+find /tmp/topico-05-restore-test -maxdepth 5 -type f
+ls -l /tmp/topico-05-restore-test/var/www/html
+
+Validação do serviço após backup
+
+curl -k -I https://localhost
+
+Evidência de monitorização e logs
+
+{
+echo "### Tópico 05 - Monitorização e logs"
+echo
+echo "### Data"
+date
+echo
+
+echo "### Tempo de atividade"
+uptime
+uptime -p
+echo
+
+echo "### Memória"
+free -h
+echo
+
+echo "### Espaço em disco"
+df -h
+echo
+
+echo "### Estado do serviço web"
+systemctl status nginx --no-pager | head -n 15
+echo
+
+echo "### Logs recentes do serviço Nginx via journalctl"
+sudo journalctl -u nginx -n 20 --no-pager
+echo
+
+echo "### Logs recentes de erro Nginx"
+sudo tail -n 20 /var/log/nginx/error.log
+} | tee evidencias/topico-05-monitorizacao-logs.txt
+
+Evidência de backup e recuperação
+
+{
+echo "### Tópico 05 - Backup e recuperação"
+echo
+echo "### Data"
+date
+echo
+
+echo "### Ficheiro de backup criado"
+ls -lh "$BACKUP"
+echo
+
+echo "### Conteúdo do backup"
+tar -tzf "$BACKUP"
+echo
+
+echo "### Recuperação em pasta de teste"
+tar -xzf "$BACKUP" -C /tmp/topico-05-restore-test
+find /tmp/topico-05-restore-test -maxdepth 5 -type f
+echo
+
+echo "### Validação do ficheiro recuperado"
+ls -l /tmp/topico-05-restore-test/var/www/html
+echo
+
+echo "### Validação do serviço original após backup"
+curl -k -I https://localhost
+} | tee evidencias/topico-05-backup-recuperacao.txt
+
+Evidência de manutenção e continuidade
+
+{
+echo "### Tópico 05 - Manutenção e continuidade"
+echo
+echo "### Data"
+date
+echo
+
+echo "### Serviço crítico"
+systemctl is-active nginx
+systemctl is-enabled nginx
+echo
+
+echo "### Validação da configuração Nginx"
+sudo nginx -t 2>&1
+echo
+
+echo "### Ficheiros e diretórios críticos"
+ls -ld /var/www/html
+ls -l /var/www/html
+ls -l /etc/nginx/sites-available/default
+echo
+
+echo "### Logs importantes"
+ls -lh /var/log/nginx/
+} | tee evidencias/topico-05-manutencao-continuidade.txt
