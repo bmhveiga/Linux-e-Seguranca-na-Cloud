@@ -1,0 +1,78 @@
+### Tópico 04 - Validação de segurança inicial
+
+### Data
+Sun Jun 14 20:29:03 UTC 2026
+
+### Serviço web ativo
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: enabled)
+     Active: active (running) since Wed 2026-06-10 06:47:54 UTC; 4 days ago
+       Docs: man:nginx(8)
+    Process: 110423 ExecReload=/usr/sbin/nginx -g daemon on; master_process on; -s reload (code=exited, status=0/SUCCESS)
+   Main PID: 103079 (nginx)
+      Tasks: 2 (limit: 1110)
+     Memory: 7.5M (peak: 8.0M)
+        CPU: 6.102s
+     CGroup: /system.slice/nginx.service
+             ├─103079 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             └─110425 "nginx: worker process"
+
+### Portas em escuta
+tcp   LISTEN 0      511          0.0.0.0:443       0.0.0.0:*    users:(("nginx",pid=110425,fd=11),("nginx",pid=103079,fd=11))
+tcp   LISTEN 0      511          0.0.0.0:80        0.0.0.0:*    users:(("nginx",pid=110425,fd=5),("nginx",pid=103079,fd=5))  
+tcp   LISTEN 0      4096         0.0.0.0:2222      0.0.0.0:*    users:(("sshd",pid=102649,fd=3),("systemd",pid=1,fd=97))     
+tcp   LISTEN 0      511             [::]:443          [::]:*    users:(("nginx",pid=110425,fd=12),("nginx",pid=103079,fd=12))
+tcp   LISTEN 0      511             [::]:80           [::]:*    users:(("nginx",pid=110425,fd=6),("nginx",pid=103079,fd=6))  
+tcp   LISTEN 0      4096            [::]:2222         [::]:*    users:(("sshd",pid=102649,fd=4),("systemd",pid=1,fd=98))     
+
+### Estado da firewall
+Status: active
+
+To                         Action      From
+--                         ------      ----
+80/tcp                     ALLOW       Anywhere                  
+2222/tcp                   ALLOW       Anywhere                  
+443/tcp                    ALLOW       Anywhere                  
+80/tcp (v6)                ALLOW       Anywhere (v6)             
+2222/tcp (v6)              ALLOW       Anywhere (v6)             
+443/tcp (v6)               ALLOW       Anywhere (v6)             
+
+
+### Validação da configuração Nginx
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+### Validação HTTP
+HTTP/1.1 301 Moved Permanently
+Server: nginx/1.24.0 (Ubuntu)
+Date: Sun, 14 Jun 2026 20:29:04 GMT
+Content-Type: text/html
+Content-Length: 178
+Connection: keep-alive
+Location: https://localhost/
+
+
+### Validação HTTPS com certificado self-signed
+HTTP/1.1 200 OK
+Server: nginx/1.24.0 (Ubuntu)
+Date: Sun, 14 Jun 2026 20:29:04 GMT
+Content-Type: text/html
+Content-Length: 347
+Last-Modified: Thu, 04 Jun 2026 20:16:20 GMT
+Connection: keep-alive
+ETag: "6a21dd14-15b"
+Accept-Ranges: bytes
+
+
+### Configuração SSH efetiva
+port 2222
+permitrootlogin no
+pubkeyauthentication yes
+passwordauthentication no
+gatewayports no
+
+### Permissões da raiz web
+drwxr-xr-x 2 root www-data 4096 Jun  8 20:36 /var/www/html
+total 8
+-rw-r--r-- 1 root www-data 347 Jun  4 20:16 index.html
+-rw-r--r-- 1 root www-data 615 Jun  4 19:57 index.nginx-debian.html

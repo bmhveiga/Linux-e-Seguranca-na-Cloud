@@ -1,0 +1,75 @@
+# Comandos usados - Tópico 04
+
+# Verificar serviço web
+systemctl status nginx --no-pager
+
+# Verificar portas em escuta
+sudo ss -tulpn | grep -E ':(80|443|2222)'
+
+# Verificar firewall
+sudo ufw status
+
+# Permitir portas necessárias
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 2222/tcp
+
+# Validar configuração do Nginx
+sudo nginx -t
+
+# Recarregar Nginx
+sudo systemctl reload nginx
+
+# Validar HTTP
+curl -I http://localhost
+
+# Validar HTTPS com certificado self-signed
+curl -k -I https://localhost
+
+# Verificar configuração efetiva do SSH
+sudo sshd -T | grep -Ei 'port|permitrootlogin|passwordauthentication|pubkeyauthentication'
+
+# Verificar permissões da raiz web
+ls -ld /var/www/html
+ls -l /var/www/html
+
+# Criar evidência
+{
+  echo "### Tópico 04 - Validação de segurança inicial"
+  echo
+  echo "### Data"
+  date
+  echo
+
+  echo "### Serviço web ativo"
+  systemctl status nginx --no-pager | head -n 15
+  echo
+
+  echo "### Portas em escuta"
+  sudo ss -tulpn | grep -E ':(80|443|2222)'
+  echo
+
+  echo "### Estado da firewall"
+  sudo ufw status
+  echo
+
+  echo "### Validação da configuração Nginx"
+  sudo nginx -t 2>&1
+  echo
+
+  echo "### Validação HTTP"
+  curl -I http://localhost
+  echo
+
+  echo "### Validação HTTPS com certificado self-signed"
+  curl -k -I https://localhost
+  echo
+
+  echo "### Configuração SSH efetiva"
+  sudo sshd -T | grep -Ei 'port|permitrootlogin|passwordauthentication|pubkeyauthentication'
+  echo
+
+  echo "### Permissões da raiz web"
+  ls -ld /var/www/html
+  ls -l /var/www/html
+} | tee evidencias/topico-04-validacao-seguranca.txt
